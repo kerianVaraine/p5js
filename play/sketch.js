@@ -100,11 +100,7 @@ function draw() {
       const r = rings[i];
       r.start = r._start;
       r.start = r._end;
-  }
-
+    }
       
+  }
 }
-
-
-  
-
