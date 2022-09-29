@@ -73,10 +73,13 @@ function draw() {
 
   for (let i = 0; i < rings.length; i++) {
     const r = rings[i];
-    const fft = spectrum[i];
+    if(spectrum[i] > 10){ // mic/audio threshold
+      const fft = spectrum[i];
+    
     stroke(r.col + fft);  
     strokeWeight(3);
-    arc(r.x, r.y, r.r, r.r, r.start, r.end, OPEN);
+    arc(r.x, r.y, r.r+ fft/6, r.r+ fft/6, r.start-fft/16, r.end, OPEN);
     r.movement(fft, 0.05);
+    }
   }
 }
