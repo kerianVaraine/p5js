@@ -2,27 +2,11 @@ let mic, fft;
 let minFreq = 100;
 let maxFreq = 1000;
 let frequencyPerSecondTick = 0;
-let freqArr; //bin 0-fft,amplitude 0-255
 let a = [0,0];
 
 let rings = [];
 
-
 function prroad() {
-  // imgs =[loadImage('pics/lightbulb-dim.png'), loadImage('./pics/lightbulb-bright.png')];
-}
-
-function freqPicker(spect){
-  let a = [];
-  
-   for (let i = 0; i < spect.length; i++){
-    if(spect[i] >150){
-        a.push(i, spect[i]);
-    }
-   }
-
-  return a;
-  
 }
 
 function fps(n) {
