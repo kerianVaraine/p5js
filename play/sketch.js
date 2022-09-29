@@ -95,12 +95,4 @@ function draw() {
     arc(r.x, r.y, r.r, r.r, r.start, r.end, OPEN);
     r.movement(fft, 0.1);
   }
-  if(deviceShaken()){
-    for (let i = 0; i < rings.length; i++) {
-      const r = rings[i];
-      r.start = r._start;
-      r.start = r._end;
-    }
-      
-  }
 }
