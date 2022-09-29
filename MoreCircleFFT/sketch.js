@@ -74,7 +74,7 @@ function draw() {
     const r = rings[i];
     const fft = spectrum[i];
      if(spectrum[i] > micThreshold){ // mic/audio threshold
-      stroke(r.col + fft/2 - micThreshold);
+      stroke(r.col + fft/2);
       strokeWeight(r.strokeWeight);
       arc(r.x + i * 2, r.y, r.r+fft/6, r.r+fft/6, r.start-fft/16, r.end+fft/16, OPEN);
       r.movement(fft, 0.05);
