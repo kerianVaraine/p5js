@@ -36,6 +36,9 @@ let ring = function(x, y, r, speed) {
   this.col = 0;
   this.start=0;
   this.end=45;
+  //hold init start and end
+  this._start =this.start;
+  this._end= this.end;
   this.speed = speed;
   this.cSpeed = function(fft) {
     return this.speed /2 * (fft / 1000);
@@ -91,6 +94,12 @@ function draw() {
     strokeWeight(3);
     arc(r.x, r.y, r.r, r.r, r.start, r.end, OPEN);
     r.movement(fft, 0.1);
+  }
+  if(deviceShaken()){
+    for (let i = 0; i < rings.length; i++) {
+      const r = rings[i];
+      r.start = r._start;
+      r.start = r._end;
   }
 
       
