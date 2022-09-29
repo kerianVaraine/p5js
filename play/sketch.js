@@ -41,7 +41,7 @@ let ringGroup = function(){
 let makeRings = function(num, x, y, r, speed) {
   this.rings = [];
   for(let i = 0; i < num; i++) {
-    this.rings.push(new ring(x, y, (r * i + r), (i * speed + 1)));
+    this.rings.push(new ring(x + i * 5, y, (r * i + r), (i * speed + 1)));
   }
 return this.rings;
 }
@@ -60,7 +60,7 @@ function setup() {
   fft = new p5.FFT();
   fft.setInput(mic);
   
-  rings = makeRings(30, width/2, height/2, 20, 1);
+  rings = makeRings(30, width/2 - 75, height/2, 20, 1);
 }
 
 function draw() {
@@ -77,6 +77,6 @@ function draw() {
     stroke(r.col + fft);  
     strokeWeight(3);
     arc(r.x, r.y, r.r, r.r, r.start, r.end, OPEN);
-    r.movement(fft, 0.1);
+    r.movement(fft, 0.05);
   }
 }
