@@ -33,7 +33,7 @@ let ring = function(x, y, r, speed) {
   this.x = x;
   this.y = y;
   this.r = r;
-  this.col = 10;
+  this.col = 0;
   this.start=0;
   this.end=45;
   this.speed = speed;
@@ -73,7 +73,7 @@ function setup() {
   fft = new p5.FFT();
   fft.setInput(mic);
   
-  rings = makeRings(20, width/2, height/2, 20, 1);
+  rings = makeRings(30, width/2, height/2, 20, 1);
 }
 
 function draw() {
