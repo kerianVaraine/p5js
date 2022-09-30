@@ -1,5 +1,5 @@
 let mic, fft;
-let micThreshold = 20;
+let micThreshold = 10;
 
 let frequencyPerSecondTick = 0;
 let a = [0,0];
@@ -60,7 +60,7 @@ function setup() {
   fft = new p5.FFT();
   fft.setInput(mic);
   
-  rings = makeRings(50, width/2 - 75, height/2, 20, 3);
+  rings = makeRings(50, width/2 - 75, height/2, 20, 1);
 }
 
 function draw() {
