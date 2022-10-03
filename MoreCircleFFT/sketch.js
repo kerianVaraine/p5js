@@ -32,11 +32,6 @@ let ring = function(x, y, r, speed) {
     this.start -= constant + this.speed /8 * (fft / 1000);
     this.end += constant + this.speed /8 * (fft / 1000);
   };
-
-  //This lagged heaps, probs obvious to someone else.
-  this.makeArc = function (i, fft) {
-    return arc(this.x + i * 2, this.y, this.r+fft/6, this.r+fft/6, this.start-fft/16, this.end+fft/16, OPEN);
-  };
 }
 
 let makeRings = function(num, x, y, r, speed) {
